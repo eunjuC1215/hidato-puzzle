@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <time.h>
 using namespace std;
-#define __EUNJU__
+
 #define MAXSIZE 100
 #define MAXN 10001
 
@@ -98,40 +98,9 @@ int main(){
   }
   // 랜덤으로 중간값 삭제를 위해 삭제할 값들을 arr배열에 체크해둠
 
-
-  #ifdef __EUNJU__
-  cout << "width : " << width << " , height : " << height << endl;
-  cout << "start : (" << start.x << ", " << start.y << ")"<< endl;
-  cout << "N : " << N << endl;
-  cout << "**********before**********" << endl;
-  for(int i = 0; i < width; i++){
-    for(int j = 0; j < height; j++){
-      cout << puzzle[i][j] << "\t";
-    }
-    cout << endl;
-  }
-  #endif
-
-
   check[start.x][start.y] = 1;
   puzzle[start.x][start.y] = 1;
   Gen(width, height, start, 1, N);
-
-
-  #ifdef __EUNJU__
-  cout << "**********after**********" << endl;
-  for(int i = 0; i < width; i++){
-    for(int j = 0; j < height; j++){
-      cout << puzzle[i][j] << "\t";
-    }
-    cout << endl;
-  }
-  cout << "arr (if 0 -> delete)" << endl;
-  for(int i = 1; i <= N; i++){
-    cout << arr[i] << " ";
-  }cout << endl;
-  #endif
-
 
   output << width << " " << height << endl;
   for(int i = 0; i < width; i++){
